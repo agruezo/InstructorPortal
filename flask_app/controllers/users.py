@@ -7,15 +7,19 @@ bcrypt = Bcrypt(app)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+    
+@app.route('/register')
+def signup():
     if 'user_id' in session:
         return redirect('/topics')
-    return render_template('index.html')
+    return render_template('register.html')
 
 @app.route('/register', methods=['POST'])
 def register():
 
     if not User.validate_register(request.form):
-        return redirect('/')
+        return redirect('/register')
     data ={ 
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
@@ -25,6 +29,12 @@ def register():
     session['user_id'] = User.add(data)
 
     return redirect('/topics')
+
+@app.route('/login')
+def instructor_login():
+    if 'user_id' in session:
+        return redirect('/topics')
+    return render_template('login.html')
 
 @app.route('/login',methods=['POST'])
 def login():

@@ -22,7 +22,7 @@ class Lesson:
 
     @classmethod
     def get_all_topic_lessons(cls, data):
-        query = "SELECT *, users.first_name AS author FROM lessons "\
+        query = "SELECT *, users.first_name AS instructor FROM lessons "\
         "LEFT JOIN users on users.id = lessons.user_id "\
         "WHERE topic_id = %(id)s;"
         results = connectToMySQL(cls.db_name).query_db(query, data)
@@ -30,7 +30,7 @@ class Lesson:
 
     @classmethod
     def create_lesson(cls, data):
-        query = "INSERT into lessons (lesson, user_id, topic_id) VALUES (%(lessons)s, %(user_id)s, %(topic_id)s);"
+        query = "INSERT into lessons (lesson, user_id, topic_id) VALUES (%(lesson)s, %(user_id)s, %(topic_id)s);"
         results = connectToMySQL(cls.db_name).query_db(query, data)
         return results
     

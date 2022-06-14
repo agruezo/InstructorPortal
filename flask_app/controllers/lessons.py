@@ -27,7 +27,7 @@ def create_lesson(id):
         return redirect(f'/topics/{id}/lessons')
     data = {
         "lesson": request.form["lesson"],
-        "user_id": request.form["author"],
+        "user_id": request.form["instructor"],
         "topic_id": request.form["topic_lesson"]
     }
     lesson.Lesson.create_lesson(data)
