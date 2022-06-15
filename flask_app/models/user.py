@@ -43,19 +43,20 @@ class User:
         results = connectToMySQL(User.db_name).query_db(query,user)
         if len(results) >= 1:
             flash("Email already taken.","register")
-            is_valid=False
+            is_valid =False
         if not EMAIL_REGEX.match(user['email']):
             flash("Invalid Email!!!","register")
-            is_valid=False
+            is_valid = False
         if len(user['first_name']) < 3:
             flash("First name must be at least 3 characters","register")
-            is_valid= False
+            is_valid = False
         if len(user['last_name']) < 3:
             flash("Last name must be at least 3 characters","register")
-            is_valid= False
+            is_valid = False
         if len(user['password']) < 8:
             flash("Password must be at least 8 characters","register")
-            is_valid= False
+            is_valid = False
         if user['password'] != user['confirm']:
             flash("Passwords don't match","register")
+            is_valid = False
         return is_valid
