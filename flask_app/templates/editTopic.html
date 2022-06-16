@@ -65,66 +65,6 @@
         </div>
     </div>
 
-    <!-- <div class="m-2 text-end">
-        <p>
-            <a href="/topics/new" class="btn btn-warning">+ New Topic</a>
-            <a href="/logout" class="btn btn-outline-warning">Logout</a>
-        </p>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-8 mx-auto">
-            <img class="img-fluid d-block mx-auto mb-4" src="/static/images/logo.PNG" alt="logo" height="300" width="423">
-            <h1 class="display-6 text-light text-center my-3">Edit your topic</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-8 mx-auto">
-            <p class="lead mb-4 text-light text-center">
-                Please make sure your changes are consistent with any lessons that you already have. Otherwise select "+ New Topic" and choose a new system/style/concept you would like to teach
-            </p>
-        </div>
-    </div>
-	<div class="container-fluid">
-        <div class="row d-flex justify-content-around">
-            <div class="col-12 col-md-6">
-                <form action="/topics/{{current_topic.id}}/update" method="post" class="p-4 bg-dark text-light">
-                    {% with messages = get_flashed_messages(category_filter=['topic']) %}
-                        {% if messages %}
-                        <div class="alert alert-danger" role="alert">
-                            <strong>ERROR</strong>
-                                {% for message in messages %}
-                                <p>{{message}}</p>
-                                {% endfor %}
-                        </div>
-                        {% endif %}
-                    {% endwith %}
-                    <div class="row g-3 my-3">
-                        <label for="topic" class="col-12 col-md-3 col-form-label text-center py-2">Topic</label>
-                        <div class="col-12 col-md-9">
-                            <input name="topic" class="form-control" value="{{current_topic.topic}}">
-                        </div>
-                    </div>
-                    <div class="row g-3 my-3">
-                        <label for="subtopic" class="col-12 col-md-3 col-form-label text-center py-2">Subtopic</label>
-                        <div class="col-12 col-md-9">
-                            <input name="subtopic" class="form-control" value="{{current_topic.subtopic}}">
-                        </div>
-                    </div>
-                    <div class="row g-3 my-3">
-                        <label for="description" class="col-12 col-md-3 col-form-label text-center py-2">Description</label>
-                        <div class="col-12 col-md-9">
-                            <textarea name="description" class="form-control" rows="3" placeholder="(i.e. The lessons will go over basic mechanics to execute a technique)">{{current_topic.description}}</textarea>
-                        </div>
-                    </div>
-                    <p class="col-12 col-md-9 mx-auto text-center">
-                        <a href="/topics" class="btn btn-secondary">Cancel</a>
-                        <input type="submit" value="Submit" class="btn btn-outline-light">
-                    </p>
-                </form>
-            </div>
-        </div>
-	</div> -->
-
 </body>
 
 </html>

@@ -41,7 +41,7 @@
 				<tbody>
 					{% for topic in topics %}
 					{% if logged_in_user.first_name == topic.creator or topic.id in topic_adds %}
-                	{% else %}
+					{% else %}
 					<tr>
 						<td><a class="link-light" href="/topics/{{topic.id}}">{{topic.topic}}</a></td>
 						<td>{{topic.creator}}</td>
@@ -54,7 +54,7 @@
 						</td>
 					
 					</tr>
-                	{% endif %}
+					{% endif %}
 					{% endfor %}
 				</tbody>
 			</table>
@@ -79,9 +79,9 @@
 							<td>{{topic.subtopic}}</td>
 							<td class="d-flex justify-content-center">
 								{% if logged_in_user.first_name == topic.creator %}
-									<a href="/topics/{{topic.id}}/edit" class="btn btn-secondary mx-1">Edit</a>
+									<a href="/topics/{{topic.id}}/edit" class="btn btn-secondary my-2 mx-1">Edit</a>
 									<form action="/topics/{{topic.id}}/delete" method="post">
-										<input type="submit" value="Delete" class="btn btn-outline-secondary">
+										<input type="submit" value="Delete" class="btn btn-outline-secondary my-2 mx-1">
 									</form>
 								{% else %}
 									<a href="/topics/{{topic.id}}/remove" class="btn btn-dark">Remove</a>

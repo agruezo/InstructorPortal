@@ -54,7 +54,7 @@ class Topic:
 
     @classmethod
     def show_topic_and_creator(cls, data):
-        query = "SELECT *, users.first_name AS creator, topics.id AS topic FROM users "\
+        query = "SELECT *, users.first_name AS creator, topics.id AS number FROM users "\
         "LEFT JOIN topics ON users.id = topics.user_id "\
         "WHERE topics.id = %(id)s;"
         results = connectToMySQL(cls.db_name).query_db(query, data)
