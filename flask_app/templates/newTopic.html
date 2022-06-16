@@ -12,63 +12,64 @@
             <a href="/logout" class="btn btn-outline-warning">Logout</a>
         </p>
     </div>
-    <div>
-        <img class="img-fluid d-block mx-auto mb-4" src="/static/images/logo.PNG" alt="logo" height="300" width="423">
-    </div>
-
-	<div class="container-fluid">
-		<div class="col-12 col-md-8 mx-auto">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <img class="img-fluid d-block mx-auto mb-4" src="/static/images/logo.PNG" alt="logo" height="300" width="423">
 			<h1 class="display-6 text-light text-center my-3">Please choose a system/style/concept you would like to teach</h1>
 		</div>
+    </div>
+    <div class="row">
 		<div class="col-12 col-md-8 mx-auto">
-            <p class="lead mb-4 text-light text-center">
+                <p class="lead mb-4 text-light text-center">
                 This can be a as general or specific as you would like it to be.
-            </p>
-            <form action="/topics/create" method="post" class="p-4 bg-dark text-light">
-                {% with messages = get_flashed_messages(category_filter=['topic']) %}
-                    {% if messages %}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>ERROR</strong>
-                            {% for message in messages %}
-                            <p>{{message}}</p>
-                            {% endfor %}
-                    </div>
-                    {% endif %}
-                {% endwith %}
-                <div class="row g-3 my-3">
-                    <div class="col-3 text-center">
-                        <label for="title" class="py-2">Topic </label>
-                    </div>
-                    <div class="col-6">
-                        <input name="topic" class="form-control" placeholder="(i.e. Eskrima, Judo, Striking, Kicking)">
-                    </div>
-                </div>
-                <div class="row g-3 my-3">
-                    <div class="col-3 text-center">
-                        <label for="subtopic" class="py-2">Subtopic </label>
-                    </div>
-                    <div class="col-6">
-                        <input name="subtopic" class="form-control" placeholder="(i.e. Single Stick, Shoulder Throws, Boxing Punches, Muay Thai Kicks)">
-                    </div>
-                </div>
-                <div class="row g-3 my-3">
-                    <div class="col-3 text-center">
-                        <label for="description" class="py-2">Description </label>
-                    </div>
-                    <div class="col-6">
-                        <textarea name="description" class="form-control" rows="3" placeholder="(i.e. The lessons will go over basic mechanics to execute a technique)"></textarea>
-                    </div>
-                    <div>
-                        <input type="hidden" name="creator" value="{{logged_in_user.id}}" class="form-control">
-                    </div>
-                </div>
-                <p class="col-9 text-end">
-                    <a href="/topics" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Submit" class="btn btn-outline-light">
                 </p>
-            </form>
         </div>
-	</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-around">
+            <div class="col-12 col-md-6">
+                <form action="/topics/create" method="post" class="p-4 bg-dark text-light">
+                    {% with messages = get_flashed_messages(category_filter=['topic']) %}
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>ERROR</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="row g-3 my-3">
+                        <label for="topic" class="col-12 col-md-3 col-form-label text-center py-2">Topic </label>
+                        <div class="col-12 col-md-9">
+                            <input name="topic" class="form-control" placeholder="(i.e. Eskrima, Judo, Striking, Kicking)">
+                        </div>
+                    </div>
+                    <div class="row g-3 my-3">
+                        <label for="subtopic" class="col-12 col-md-3 col-form-label text-center py-2">Subtopic </label>
+                        <div class="col-12 col-md-9">
+                            <input name="subtopic" class="form-control" placeholder="(i.e. Single Stick, Shoulder Throws, Boxing Punches, Muay Thai Kicks)">
+                        </div>
+                    </div>
+                    <div class="row g-3 my-3">
+                        <label for="description" class="col-12 col-md-3 col-form-label text-center py-2">Description </label>
+                        <div class="col-12 col-md-9">
+                            <textarea name="description" class="form-control" rows="3" placeholder="(i.e. The lessons will go over basic mechanics to execute a technique)"></textarea>
+                        </div>
+                        <div>
+                            <input type="hidden" name="creator" value="{{logged_in_user.id}}" class="form-control">
+                        </div>
+                    </div>
+                    <p class="col-12 col-md-9 mx-auto text-center">
+                        <a href="/topics" class="btn btn-secondary">Cancel</a>
+                        <input type="submit" value="Submit" class="btn btn-outline-light">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+	
 
 </body>
 
