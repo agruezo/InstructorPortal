@@ -23,13 +23,13 @@
             </div>
         </div>
         <div class="col-12 col-md-2">
-            <img class="img-fluid d-block" src="/static/images/logo.PNG" alt="logo" height="300" width="423">
+            <img class="img-fluid d-block mb-3" src="/static/images/logo.PNG" alt="logo" height="300" width="423">
         </div>
     </div>
     
     
 	<div class="container-fluid text-light">
-		<div class="col-12 col-md-8 mx-auto">
+		<div class="col-12 col-md-8 border border-warning border-4 mx-auto">
             <form action="/topics/{{current_topic.number}}/lessons/create" method="post" class="p-4 bg-dark text-light">
                 {% with messages = get_flashed_messages(category_filter=['lesson']) %}
                     {% if messages %}
@@ -43,7 +43,7 @@
                 {% endwith %}
                 <div class="row d-flex justify-content-center my-2">
                     <div class="col-md-12 text-center">
-                        <p class="lead text-warning">Add a lesson to the class</p>
+                        <p class="lead text-warning">Add a Lesson to the Class</p>
                     </div>
                     <div class="col-md-9">
                         <textarea name="lesson" class=" align-item-center form-control" rows="5"></textarea>
@@ -61,7 +61,7 @@
                 </div>
             </form>
         </div>
-        <h1 class="display-6 text-warning text-center">LESSONS</h1>
+        <h1 class="display-6 text-decoration-underline text-warning text-center my-5">LESSONS</h1>
         <div class="row d-flex justify-content-center">
             {% for lesson in current_lessons %}
             <div class="col-12 col-md-3 mb-2">
