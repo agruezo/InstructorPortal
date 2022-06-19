@@ -9,9 +9,10 @@
     <title>Registration</title>
 </head>
 <body class="bg-dark">
+
     <div class="container-fluid position-absolute top-50 start-50 translate-middle">
         <div class="row d-flex justify-content-around">
-            <div class="col-9 col-md-4 align-self-center">
+            <div class="col-8 col-md-4 align-self-center">
                 <img class="img-fluid d-block" src="/static/images/logo.PNG" alt="logo" >
             </div>
             <div class="col-12 col-md-4">
@@ -19,7 +20,7 @@
                     <h1 class="display-5">Instructor Registration</h1>
                     <p class="lead">Please create an account to receive access to the portal</p>
                 </div>
-                <form action="/register" method="post" class="p-4 bg-dark text-light">
+                <form action="/register" method="post" class="p-2 bg-dark text-light">
                     {% with messages = get_flashed_messages(category_filter=['register']) %}
                         {% if messages %}
                         <div class="alert alert-danger" role="alert">
@@ -41,6 +42,9 @@
                     <label for="confirm" class="py-2">Confirm Password:</label>
                     <input type="password" name="confirm" class="form-control">
                     <input type="submit" value="Register" class="form-control btn-lg btn-warning my-3 py-3">
+                    <p class="text-center my-0">
+                        <a class="text-warning" href="/login">Login</a>
+                    </p>
                 </form>
             </div>
         </div>

@@ -23,7 +23,7 @@ class Topic:
         "LEFT JOIN adds ON topics.id = adds.topic_id "\
         "GROUP BY topics.id;"
         results = connectToMySQL(cls.db_name).query_db(query)
-        print(results)
+        # print(results)
         return results
 
     @classmethod
@@ -31,7 +31,7 @@ class Topic:
         topic_adds = []
         query = "SELECT topic_id FROM adds WHERE user_id = %(user_id)s;"
         results = connectToMySQL(cls.db_name).query_db(query, data)
-        print(results)
+        # print(results)
         for result in results:
             topic_adds.append(result['topic_id'])
         return topic_adds
@@ -48,7 +48,7 @@ class Topic:
         "JOIN users ON users.id = topics.user_id "\
         "WHERE topics.id = %(id)s;"
         results = connectToMySQL(cls.db_name).query_db(query, data)
-        print (results[0])
+        # print (results[0])
         
         return (results[0])
 
