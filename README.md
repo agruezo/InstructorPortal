@@ -1,6 +1,6 @@
-<h2>CODING DOJO SOLO PROJECT<h2>
+<h2>CODING DOJO SOLO PROJECT</h2>
 
-<h3>Project Idea: INSTRUCTOR PORTAL<h3>
+<h3>Project Idea: INSTRUCTOR PORTAL</h3>
 
 Project Description: A web app that will act as a portal for martial arts instructors to develop ideas for class instruction as well as develop and contribute lesson plans to these ideas.
 
