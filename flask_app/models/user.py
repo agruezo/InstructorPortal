@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-import re	
+import re
+import hashlib	
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 from flask import flash
@@ -13,13 +14,14 @@ class User:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
+        self.email_hash = data['email_hash']
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
     @classmethod
     def add(cls,data):
-        query = "INSERT INTO users (first_name,last_name,email,password) VALUES(%(first_name)s,%(last_name)s,%(email)s,%(password)s)"
+        query = "INSERT INTO users (first_name,last_name,email,email_hash,password) VALUES(%(first_name)s,%(last_name)s,%(email)s,%(email_hash)s,%(password)s)"
         return connectToMySQL(cls.db_name).query_db(query,data)
 
     @classmethod

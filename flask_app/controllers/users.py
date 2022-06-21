@@ -3,6 +3,7 @@ from flask_app import app
 
 from flask_app.models.user import User
 from flask_bcrypt import Bcrypt
+import hashlib
 bcrypt = Bcrypt(app)
 
 @app.route('/')
@@ -24,6 +25,7 @@ def register():
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "email": request.form['email'],
+        "email_hash": hashlib.md5((request.form['email']).strip().lower().encode('utf-8')).hexdigest(),
         "password": bcrypt.generate_password_hash(request.form['password'])
     }
     session['user_id'] = User.add(data)

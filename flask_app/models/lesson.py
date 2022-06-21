@@ -17,7 +17,7 @@ class Lesson:
     def get_all_lessons(cls):
         query = "SELECT * FROM lessons"
         results = connectToMySQL(cls.db_name).query_db(query)
-        print(results)
+        # print(results)
         return results
 
     @classmethod
