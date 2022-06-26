@@ -9,8 +9,8 @@ class Topic:
     def __init__(self,data):
         self.id = data['id']
         self.topic = data['title']
-        self.subtopic = data['description']
-        self.description = data['due_date']
+        self.subtopic = data['subtopic']
+        self.description = data['description']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
