@@ -8,7 +8,7 @@ class Topic:
 
     def __init__(self,data):
         self.id = data['id']
-        self.topic = data['title']
+        self.topic = data['topic']
         self.subtopic = data['subtopic']
         self.description = data['description']
         self.created_at = data['created_at']
